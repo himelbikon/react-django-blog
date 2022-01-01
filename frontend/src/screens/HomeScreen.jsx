@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import LeftSidebar from "../components/LeftSidebar";
+import MiddleBar from "../components/MiddleBar";
+import RightSidebar from "../components/RightSidebar";
 
 export default class HomeScreen extends Component {
   render() {
@@ -12,13 +14,13 @@ export default class HomeScreen extends Component {
               <Col lg={4}>
                 <LeftSidebar />
               </Col>
-              <Col className="bg-success" lg={8}>
-                Column Middle
+              <Col lg={8}>
+                <MiddleBar />
               </Col>
             </Row>
           </Col>
-          <Col className="bg-success" sm={12} lg={3}>
-            Column Right
+          <Col sm={12} lg={3}>
+            <RightSidebar />
           </Col>
         </Row>
       </div>

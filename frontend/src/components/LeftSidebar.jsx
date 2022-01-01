@@ -25,7 +25,7 @@ const LeftSidebar = () => {
         </ListGroup>
       </Box>
 
-      <Box title="Most Viewed Posts">
+      <Box title="Random Posts">
         <ListGroup>
           <Link to="post/12">
             <ListGroup.Item className="p-4">

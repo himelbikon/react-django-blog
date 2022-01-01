@@ -50,6 +50,24 @@ div {
   display: none;
 }
 
+button {
+  background-color: $color-df;
+  outline: none;
+  border: none;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+
+  * {
+    color: white;
+  }
+
+  &:hover {
+    * {
+      color: black;
+    }
+  }
+}
+
 .btn-df {
   background-color: $color-df;
   outline: none;
@@ -157,6 +175,28 @@ header {
 
 .box {
   margin-bottom: 1rem !important;
+}
+
+.tags {
+  .row {
+    .col-sm-6 {
+      text-align: center;
+      padding: 5px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      &:hover {
+        background-color: $color-df;
+
+        * {
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {
