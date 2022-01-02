@@ -199,6 +199,12 @@ header {
   }
 }
 
+.post {
+  &:hover {
+    box-shadow: 0px 0px 5px black;
+  }
+}
+
 @media (max-width: 992px) {
   header {
     .logo-addvertise-1 {
