@@ -8,7 +8,12 @@ from .serializers import *
 
 class BlogsView(APIView):
     def get(self, request):
-        blogs = Blog.objects.all()[0:5]
+        page = request.GET.get('page', 1)
+        try:
+            page = int(page)
+        except:
+            page = 1
+        blogs = Blog.objects.all()[5 * (page-1):5 * page]
         serializer = BlogSerializer(blogs, many=True)
         return Response(serializer.data)
 
@@ -23,11 +28,12 @@ class ShowcaseBlogsView(APIView):
     def random_blogs(self):
         blogs = Blog.objects.all()
         sel_blogs = set()
+        post_number = 7
 
-        if len(blogs) < 5:
+        if len(blogs) < post_number:
             sel_blogs = blogs
         else:
-            while len(sel_blogs) <= 5:
+            while len(sel_blogs) <= post_number:
                 sel_blogs.add(random.choice(blogs))
 
         serializer = BlogSerializer(sel_blogs, many=True)
