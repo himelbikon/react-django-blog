@@ -9,9 +9,15 @@ class BlogSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'category',
+            'image',
             'user',
             'date_time',
-            'details'
+            'details',
+            'views',
+
+            'category_name',
+            'posted_by',
+            'ago',
         ]
 
 
