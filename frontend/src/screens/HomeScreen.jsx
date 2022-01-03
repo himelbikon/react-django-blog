@@ -5,6 +5,10 @@ import MiddleBar from "../components/MiddleBar";
 import RightSidebar from "../components/RightSidebar";
 
 export default class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>

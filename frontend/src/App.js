@@ -15,7 +15,7 @@ function App() {
           <Container>
             <Routes>
               <Route path="/" element={<HomeScreen />} exact />
-              <Route path="/post" element={<PostScreen />} />
+              <Route path="/post/:himel" element={<PostScreen />} />
             </Routes>
           </Container>
         </main>

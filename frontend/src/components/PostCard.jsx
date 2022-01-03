@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 
-const PostCard = () => {
+const PostCard = ({ blog }) => {
   return (
     <div>
       <div className="post border mb-3">
@@ -14,9 +14,7 @@ const PostCard = () => {
           />
         </div>
         <div class="p-3">
-          <h5>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, aut?
-          </h5>
+          <h5>{blog.title}</h5>
 
           <div className="my-3">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat

@@ -4,15 +4,16 @@ import { Pagination } from "react-bootstrap";
 import PostCard from "./PostCard";
 
 const MiddleBar = () => {
-  let blogs = [];
+  const [blogs, setBlogs] = useState([]);
 
   const get_blogs = async () => {
     await axios
-      .get("http://127.0.0.1:8000/api/blog/all/")
+      .get("/api/blog/all/")
       .then((response) => {
-        blogs = response.data;
+        setBlogs(response.data);
       })
       .catch((error) => {
+        console.log(error);
         if (error.response) {
           for (let property in error.response.data) {
             console.log(
@@ -29,7 +30,9 @@ const MiddleBar = () => {
 
   return (
     <div>
-      <PostCard />
+      {blogs.map((blog) => (
+        <PostCard blog={blog} key={blog.id} />
+      ))}
 
       <Pagination className="justify-content-center">
         <Pagination.First />

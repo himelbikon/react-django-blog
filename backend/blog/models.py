@@ -9,6 +9,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def length(self):
+        blogs = Blog.objects.filter(category=self)
+        return len(blogs)
+
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)

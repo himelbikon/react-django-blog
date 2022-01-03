@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import { useParams, useRouteMatch } from "react-router-dom";
 
-export default class PostScreen extends Component {
-  render() {
-    return (
-      <div>
-        <h1>This is post screen</h1>
-      </div>
-    );
-  }
-}
+const PostScreen = () => {
+  const p = useParams();
+  return (
+    <div>
+      <h4>Test: {JSON.stringify(p)} </h4>
+    </div>
+  );
+};
+
+export default PostScreen;

@@ -9,3 +9,10 @@ class BlogsView(APIView):
         blogs = Blog.objects.all()[0:5]
         serializer = BlogSerializer(blogs, many=True)
         return Response(serializer.data)
+
+
+class CategoriesView(APIView):
+    def get(self, request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)

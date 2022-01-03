@@ -13,3 +13,13 @@ class BlogSerializer(serializers.ModelSerializer):
             'date_time',
             'details'
         ]
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = [
+            'id',
+            'name',
+            'length',
+        ]
